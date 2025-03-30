@@ -1,113 +1,67 @@
-import Image from "next/image";
+import Image from 'next/image';
+//styles//
+import styles from './Hero.module.css';
+//import styles1 from './Benefits.module.css';//
+import styles2 from './GoPlans.module.css';
+
+
+//images//
+import Rocket from '/public/images/Benefits/Rocket.png';
+import Lock from '/public/images/Benefits/Lock.png';
+import Intersect from '/public/images/Benefits/intersect.png';
+import Burger from '/public/images/Benefits/Burger.png';
+
+//components//
+import Button from '@/components/Button/Button';
+import {Article1} from '@/components/Article1/Article1';
+import {Footer} from "@/components/Footer/Footer";
+
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+   <>
+    <section className={styles.hero}>
+     <div className={styles.content}>
+       <h1>
+         Potencia Tu Éxito <br/>
+         Digital en la Nube
+       </h1>
+       <p>
+         Desata el poder de tu presencia online con nuestro hosting web,<br/>
+         juegos y servidores virtuales de alto rendimiento
+       </p>
+       <Button label={'Ver Planes'}  style={undefined} href={'/Plans'}/>
+     </div>
+    
+     <Image  src="/images/Proyect/hero.png" className={styles.image} alt="hero" width={543} height={464}  />
+    </section>      
+    <section className={styles.benefits}>
+          <h2 className={styles.h2}>Mira Nuestros Beneficios</h2>
+          <p className={styles.p}>Simplificamos tu experiencia en la nube para que puedas enfocarte en lo que <br />
+            realmente importa: hacer crecer tu proyecto.
+          </p>
+          <div className={styles.articleContainer}>
+          <Article1 imageSrc={Rocket}  title={'Velocidad'}  text={'Nuestro servicio te ofrece una experiencia de usuario intuitiva desde el primer click'}  />
+          <Article1   imageSrc={Lock} title={'Seguridad'}  text={'Nuestro servicio te ofrece una experiencia de usuario intuitiva desde el primer click'}  />
+          <Article1  imageSrc={Intersect} title={'Soporte'}  text={'Nuestro servicio te ofrece una experiencia de usuario intuitiva desde el primer click'}  />
+          <Article1  imageSrc={Burger}title={'Facilidad'}  text={'Nuestro servicio te ofrece una experiencia de usuario intuitiva desde el primer click'}  />
+          </div> 
+    </section>
+    <section className={styles2.GoPlans}>
+        <div className={styles2.contentGoplans}>
+          <h1>
+          ¿Listos para elevar tu<br/>
+          presencia online?
+          </h1>
+          <p>
+            Descubre Aqui los Planes Perfectos para<br/>
+            Potenciar tu Proyecto Digital
+          </p>
+          <Button label={'Ver Planes'} href={'/Plans'} style={{backgroundColor:'white', color:'#6c5da1'}}/>
         </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        <Image  src="/images/Proyect/Goplans.png" className={styles2.imageGoPlans} alt="hero" width={543} height={464}  />
+    </section>
+    <Footer />
+   </>
   );
 }

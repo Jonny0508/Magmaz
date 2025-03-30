@@ -1,8 +1,12 @@
+import Image from 'next/image'; 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Quicksand } from "next/font/google";
 import "./globals.css";
+import Button from "@/components/Button/Button";
+import Link from 'next/link';
 
-const inter = Inter({ subsets: ["latin"] });
+
+const inter = Quicksand({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +20,33 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+
+          <header className='nav'>
+            <div className='logo'>
+            <Image  src="/images/logos/logo1.png" className='iconLogo' alt="Logo" width={500} height={300}  />
+            </div>
+            <nav>
+                <ul>
+                <Link href="/"> Inicio </Link>
+                <Link href="/Plans">Planes</Link>   
+                </ul>      
+            </nav>
+
+            <Button label="Iniciar Sesion" style={{ position: 'absolute', top: '25px', right: '500px', marginRight: '70px' }} href={'/Login'} />
+            <Button label="Registrame" style={{ position: 'absolute', top: '25px', right: '300px' }} href={'/Register'} />
+
+            <Link href={'/ShoppingOrder'}>
+            <Image   src="/images/logos/Cart.png" className='iconCarrito' alt="Carrito" width={26.07} height={24.06}  />
+            </Link>
+        </header>
+
+
+        {children}
+        
+        
+        
+        </body>
     </html>
   );
 }
