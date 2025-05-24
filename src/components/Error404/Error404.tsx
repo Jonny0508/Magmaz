@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Button from "../Button/Button";
 import styles from './Error404.module.css';
-export default function Errro404() {
+export default function Error404() {
     return (
         <>
         <div className={styles.container}>

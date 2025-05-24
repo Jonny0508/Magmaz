@@ -1,9 +1,9 @@
-import Errro404 from "@/components/Errror404/Error404";
+import Error404 from "@/components/Error404/Error404";
 
 export default function NotFound() {
     return (
         <>
-         <Errro404></Errro404>
+         <Error404></Error404>
         </>
     );
 }
